@@ -11,24 +11,44 @@ href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
 <style>
 
 body{
-margin:0;
-padding:0;
+    margin:0;
+    padding:0;
 }
 
+/* Container utama */
 .swiper{
-width:100%;
-height:500px;
-padding-bottom:40px;
+    width:100%;
+    height:550px; /* 500px gambar + ruang dots */
+    position:relative;
 }
 
-.swiper-pagination{
-bottom:-5px !important;
+/* Area slide */
+.swiper-slide{
+    height:500px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
 }
 
+/* Gambar */
 .swiper-slide img{
-width:100%;
-height:100%;
-object-fit:contain;
+    width:100%;
+    height:100%;
+    object-fit:contain;
+}
+
+/* Pagination dots */
+.swiper-pagination{
+    position:absolute !important;
+    bottom:10px !important;
+    left:0;
+    width:100%;
+}
+
+/* Tombol navigasi */
+.swiper-button-next,
+.swiper-button-prev{
+    color:#ffffff;
 }
 
 </style>
@@ -39,26 +59,28 @@ object-fit:contain;
 
 <div class="swiper">
 
-<div class="swiper-wrapper">
+    <div class="swiper-wrapper">
 
-<div class="swiper-slide">
-<img src="slide1.png">
-</div>
+        <div class="swiper-slide">
+            <img src="slide1.png" alt="Slide 1">
+        </div>
 
-<div class="swiper-slide">
-<img src="slide2.png">
-</div>
+        <div class="swiper-slide">
+            <img src="slide2.png" alt="Slide 2">
+        </div>
 
-<div class="swiper-slide">
-<img src="slide3.png">
-</div>
+        <div class="swiper-slide">
+            <img src="slide3.png" alt="Slide 3">
+        </div>
 
-</div>
+    </div>
 
-<div class="swiper-pagination"></div>
+    <!-- Pagination -->
+    <div class="swiper-pagination"></div>
 
-<div class="swiper-button-next"></div>
-<div class="swiper-button-prev"></div>
+    <!-- Navigation -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
 
 </div>
 
@@ -68,22 +90,22 @@ object-fit:contain;
 
 const swiper = new Swiper('.swiper', {
 
-loop:true,
+    loop:true,
 
-autoplay:{
-delay:5000,
-disableOnInteraction:false,
-},
+    autoplay:{
+        delay:5000,
+        disableOnInteraction:false,
+    },
 
-pagination:{
-el:'.swiper-pagination',
-clickable:true,
-},
+    pagination:{
+        el:'.swiper-pagination',
+        clickable:true,
+    },
 
-navigation:{
-nextEl:'.swiper-button-next',
-prevEl:'.swiper-button-prev',
-}
+    navigation:{
+        nextEl:'.swiper-button-next',
+        prevEl:'.swiper-button-prev',
+    }
 
 });
 
